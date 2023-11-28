@@ -1,0 +1,37 @@
+{
+  "name": "@feelinglovelynow/svelte-catch",
+  "version": "1.0.1",
+  "description": "Ease error handling in SvelteKit with functions to help with catching, parsing and logging errors",
+  "author": "https://github.com/feelinglovelynow?tab=repositories",
+  "license": "MIT",
+  "type": "module",
+  "types": "./dist/index.ts",
+  "exports": "./dist/index.js",
+  "files": [
+    "dist",
+    "tsc",
+    "src"
+  ],
+  "keywords": [
+    "errors",
+    "throw",
+    "catch",
+    "svelte",
+    "sveltekit"
+  ],
+  "scripts": {
+    "build": "bash ./build.sh",
+    "cloud": "pnpm build && pnpm publish --access public ."
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.8",
+    "typescript": "^5.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feelinglovelynow/svelte-catch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/feelinglovelynow/svelte-catch/issues"
+  }
+}

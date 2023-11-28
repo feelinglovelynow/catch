@@ -1,0 +1,5 @@
+export * from '../tsc/enumCatchLocation.d'
+export * from '../tsc/log.d'
+export * from '../tsc/SvelteCatch.d'
+export * from '../tsc/throw.d'
+export * from '../tsc/typedefs.d'
