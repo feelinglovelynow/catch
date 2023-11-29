@@ -35,9 +35,16 @@ export class SvelteCatch {
     if (originalError?.status && originalError?.location?.startsWith('/')) throw originalError // redirect error
     else if (this.#location === enumCatchLocation.server && !json) throw { id: 'fln__svelte-catch__missing-json', message: 'IF this.#location === "server" AND this is not a redirect error, please pass json from import { json } from "@sveltejs/kit"', _errorData: { json } }
     else {
-      const formattedError = this.#location === enumCatchLocation.pageServer ?
-        this.#getFormattedError(originalError) :
-        json(this.#getFormattedError(originalError), { status: 500 })
+      let formattedError
+
+      switch (this.#location) {
+        case enumCatchLocation.server:
+          if (json) formattedError = json(this.#getFormattedError(originalError), { status: 500 })
+          break
+        case enumCatchLocation.pageServer:
+          formattedError = this.#getFormattedError(originalError)
+          break
+      }
 
       log({ originalError, formattedError })
 
