@@ -1,6 +1,6 @@
 {
   "name": "@feelinglovelynow/svelte-catch",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Ease error handling in SvelteKit with functions to help with catching, parsing and logging errors",
   "author": "https://github.com/feelinglovelynow?tab=repositories",
   "license": "MIT",
@@ -20,6 +20,7 @@
     "sveltekit"
   ],
   "scripts": {
+    "watch": "pnpm tsc -w",
     "build": "bash ./build.sh",
     "cloud": "pnpm build && pnpm publish --access public ."
   },
